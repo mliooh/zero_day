@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_man/pages/homepage.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -21,7 +22,7 @@ class Welcome extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 80.0),
+                padding: const EdgeInsets.only(top: 80.0),
                 child: Image.asset(
                   "lib/images/thunderstorm.png",
                   height: 200,
@@ -96,11 +97,19 @@ class Welcome extends StatelessWidget {
                     children: [
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              primary: Colors.yellow,
-                              onPrimary: Colors.black,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 120, vertical: 15)),
-                          onPressed: () {},
+                            primary: Colors.yellow,
+                            onPrimary: Colors.black,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 120, vertical: 15),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Homepage(),
+                              ),
+                            );
+                          },
                           child: const Text(
                             'Get Started',
                             style: TextStyle(fontSize: 20),
